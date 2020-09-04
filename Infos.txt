@@ -1,0 +1,38 @@
+Database Name: 
+PetShop-Cliente-Microservice-Db
+Server Name: 
+petshop-cliente-microservice-db-server-sergio
+login: 
+sergio
+senha: 
+123mudar!
+ConnectionString: 
+Server=tcp:petshop-animal-microservice-db-server-sergio.database.windows.net,1433;Initial Catalog=PetShop-Animal-Microservice-Db;Persist Security Info=False;User ID=sergio;Password=123mudar!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
+
+
+WebApp
+Name: 
+PetShop-ClienteMicroservice-Api-Sergio
+Windows Plan: 
+ClienteMicroserviceFreeHostingPlan
+
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+
+Database Name: 
+PetShop-Animal-Microservice-Db
+Server Name: 
+petshop-animal-microservice-db-server-sergio
+login: 
+sergio
+senha: 
+123mudar!
+ConnectionString:
+Server=tcp:petshop-cliente-microservice-db-server-sergio.database.windows.net,1433;Initial Catalog=PetShop-Cliente-Microservice-Db;Persist Security Info=False;User ID=sergio;Password=123mudar!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
+
+WebApp
+Name: 
+PetShop-AnimalMicroservice-Api-Sergio
+Windows Plan: 
+AnimalMicroserviceFreeHostingPlan
