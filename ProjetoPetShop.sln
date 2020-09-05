@@ -11,15 +11,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microservices", "Microservi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IamMicroservice", "IamMicroservice", "{3E92CD18-E67E-42B0-ABEC-B429E8ED2D66}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AnimalService", "AnimalService", "{AF16448C-0984-4C2E-81B4-F0287DC835F0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AnimalMicroservice", "AnimalMicroservice", "{AF16448C-0984-4C2E-81B4-F0287DC835F0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AtendimentoService", "AtendimentoService", "{5F45F752-A35F-4CD9-BAAF-956CCEDC97D1}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AtendimentoMicroservice", "AtendimentoMicroservice", "{5F45F752-A35F-4CD9-BAAF-956CCEDC97D1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClienteService", "ClienteService", "{F2593CDC-7179-478F-8C22-930215D6C5AF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ClienteMicroservice", "ClienteMicroservice", "{F2593CDC-7179-478F-8C22-930215D6C5AF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProdutoService", "ProdutoService", "{7A5E8D42-DFA9-44E7-AD6D-56075F70F786}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ProdutoMicroservice", "ProdutoMicroservice", "{7A5E8D42-DFA9-44E7-AD6D-56075F70F786}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FuncionarioService", "FuncionarioService", "{5064ED40-1001-4046-B0FC-8559C796BA83}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FuncionarioMicroservice", "FuncionarioMicroservice", "{5064ED40-1001-4046-B0FC-8559C796BA83}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Application", "1 - Application", "{77A1E427-832E-4FF7-A2C0-68F2FFD8A5B2}"
 EndProject
@@ -43,17 +43,31 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Domain", "2 - Domain", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Infrastructure", "3 - Infrastructure", "{93F07B36-9B3C-4AFC-A2F4-13F0EB6B1E07}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetShop.Microservices.ClienteMicroservice.Domain", "PetShop.Microservices.ClienteMicroservice.Domain\PetShop.Microservices.ClienteMicroservice.Domain.csproj", "{00AE7487-B444-416B-AA29-ACB197B6C6D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetShop.Microservices.ClienteMicroservice.Domain", "PetShop.Microservices.ClienteMicroservice.Domain\PetShop.Microservices.ClienteMicroservice.Domain.csproj", "{00AE7487-B444-416B-AA29-ACB197B6C6D1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetShop.Microservices.AnimalMicroservice.Domain", "PetShop.Microservices.AnimalMicroservice.Domain\PetShop.Microservices.AnimalMicroservice.Domain.csproj", "{EB11B826-B605-4359-BDBB-C3F146A0F498}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetShop.Microservices.AnimalMicroservice.Domain", "PetShop.Microservices.AnimalMicroservice.Domain\PetShop.Microservices.AnimalMicroservice.Domain.csproj", "{EB11B826-B605-4359-BDBB-C3F146A0F498}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetShop.Microservices.AnimalMicroservice.Infra.DataAccess", "PetShop.Microservices.AnimalMicroservice.Infra.DataAccess\PetShop.Microservices.AnimalMicroservice.Infra.DataAccess.csproj", "{1CA480CB-9F0D-41C0-B66B-EF0F1D3F955C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetShop.Microservices.AnimalMicroservice.Infra.DataAccess", "PetShop.Microservices.AnimalMicroservice.Infra.DataAccess\PetShop.Microservices.AnimalMicroservice.Infra.DataAccess.csproj", "{1CA480CB-9F0D-41C0-B66B-EF0F1D3F955C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetShop.Microservices.AnimalMicroservice.Application.Api", "PetShop.Microservices.AnimalMicroservice.Application.Api\PetShop.Microservices.AnimalMicroservice.Application.Api.csproj", "{2917F19A-8B14-49F2-A78C-5E772BF8CAC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetShop.Microservices.AnimalMicroservice.Application.Api", "PetShop.Microservices.AnimalMicroservice.Application.Api\PetShop.Microservices.AnimalMicroservice.Application.Api.csproj", "{2917F19A-8B14-49F2-A78C-5E772BF8CAC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetShop.Microservices.ClienteMicroservice.Application.Api", "PetShop.Microservices.ClienteMicroservice.Application.Api\PetShop.Microservices.ClienteMicroservice.Application.Api.csproj", "{EF66BFC3-4AE7-4831-BC56-5B8532A7B9A7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetShop.Microservices.ClienteMicroservice.Application.Api", "PetShop.Microservices.ClienteMicroservice.Application.Api\PetShop.Microservices.ClienteMicroservice.Application.Api.csproj", "{EF66BFC3-4AE7-4831-BC56-5B8532A7B9A7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PetShop.Microservices.ClienteMicroservice.Infra.DataAccess", "PetShop.Microservices.ClienteMicroservice.Infra.DataAccess\PetShop.Microservices.ClienteMicroservice.Infra.DataAccess.csproj", "{D962972E-2967-4AB4-9D2D-8B5DF96508EF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetShop.Microservices.ClienteMicroservice.Infra.DataAccess", "PetShop.Microservices.ClienteMicroservice.Infra.DataAccess\PetShop.Microservices.ClienteMicroservice.Infra.DataAccess.csproj", "{D962972E-2967-4AB4-9D2D-8B5DF96508EF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetShop.IamMicroserver.Admin", "PetShop.IamMicroserver\src\PetShop.IamMicroserver.Admin\PetShop.IamMicroserver.Admin.csproj", "{02E32EDB-D0AB-461A-80A9-402A002581DF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetShop.IamMicroserver.Admin.Api", "PetShop.IamMicroserver\src\PetShop.IamMicroserver.Admin.Api\PetShop.IamMicroserver.Admin.Api.csproj", "{1E73AB59-DB81-4079-BE44-9DDE4C396080}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetShop.IamMicroserver.Admin.EntityFramework.MySql", "PetShop.IamMicroserver\src\PetShop.IamMicroserver.Admin.EntityFramework.MySql\PetShop.IamMicroserver.Admin.EntityFramework.MySql.csproj", "{3B40E17A-771C-42BA-BF9C-7A51419C6726}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetShop.IamMicroserver.Admin.EntityFramework.PostgreSQL", "PetShop.IamMicroserver\src\PetShop.IamMicroserver.Admin.EntityFramework.PostgreSQL\PetShop.IamMicroserver.Admin.EntityFramework.PostgreSQL.csproj", "{49F8C052-F3A5-4EB7-B834-79F9BE34FC85}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetShop.IamMicroserver.Admin.EntityFramework.Shared", "PetShop.IamMicroserver\src\PetShop.IamMicroserver.Admin.EntityFramework.Shared\PetShop.IamMicroserver.Admin.EntityFramework.Shared.csproj", "{FDB1D5B9-1923-4DEA-A92F-6DD4A84B01E9}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetShop.IamMicroserver.Admin.EntityFramework.SqlServer", "PetShop.IamMicroserver\src\PetShop.IamMicroserver.Admin.EntityFramework.SqlServer\PetShop.IamMicroserver.Admin.EntityFramework.SqlServer.csproj", "{769A135C-BD46-4983-BB8B-366857607FA2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PetShop.IamMicroserver.STS.Identity", "PetShop.IamMicroserver\src\PetShop.IamMicroserver.STS.Identity\PetShop.IamMicroserver.STS.Identity.csproj", "{8AF1A1D4-CD23-43BA-9344-D652957E1CC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -85,6 +99,34 @@ Global
 		{D962972E-2967-4AB4-9D2D-8B5DF96508EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D962972E-2967-4AB4-9D2D-8B5DF96508EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D962972E-2967-4AB4-9D2D-8B5DF96508EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02E32EDB-D0AB-461A-80A9-402A002581DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02E32EDB-D0AB-461A-80A9-402A002581DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02E32EDB-D0AB-461A-80A9-402A002581DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02E32EDB-D0AB-461A-80A9-402A002581DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E73AB59-DB81-4079-BE44-9DDE4C396080}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E73AB59-DB81-4079-BE44-9DDE4C396080}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E73AB59-DB81-4079-BE44-9DDE4C396080}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E73AB59-DB81-4079-BE44-9DDE4C396080}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B40E17A-771C-42BA-BF9C-7A51419C6726}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B40E17A-771C-42BA-BF9C-7A51419C6726}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B40E17A-771C-42BA-BF9C-7A51419C6726}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B40E17A-771C-42BA-BF9C-7A51419C6726}.Release|Any CPU.Build.0 = Release|Any CPU
+		{49F8C052-F3A5-4EB7-B834-79F9BE34FC85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49F8C052-F3A5-4EB7-B834-79F9BE34FC85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49F8C052-F3A5-4EB7-B834-79F9BE34FC85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49F8C052-F3A5-4EB7-B834-79F9BE34FC85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDB1D5B9-1923-4DEA-A92F-6DD4A84B01E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDB1D5B9-1923-4DEA-A92F-6DD4A84B01E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDB1D5B9-1923-4DEA-A92F-6DD4A84B01E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDB1D5B9-1923-4DEA-A92F-6DD4A84B01E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{769A135C-BD46-4983-BB8B-366857607FA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{769A135C-BD46-4983-BB8B-366857607FA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{769A135C-BD46-4983-BB8B-366857607FA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{769A135C-BD46-4983-BB8B-366857607FA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AF1A1D4-CD23-43BA-9344-D652957E1CC9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AF1A1D4-CD23-43BA-9344-D652957E1CC9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AF1A1D4-CD23-43BA-9344-D652957E1CC9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AF1A1D4-CD23-43BA-9344-D652957E1CC9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -113,6 +155,13 @@ Global
 		{2917F19A-8B14-49F2-A78C-5E772BF8CAC7} = {77A1E427-832E-4FF7-A2C0-68F2FFD8A5B2}
 		{EF66BFC3-4AE7-4831-BC56-5B8532A7B9A7} = {E3DB0F02-DC0F-4CC7-9176-E3C73854E1E6}
 		{D962972E-2967-4AB4-9D2D-8B5DF96508EF} = {93F07B36-9B3C-4AFC-A2F4-13F0EB6B1E07}
+		{02E32EDB-D0AB-461A-80A9-402A002581DF} = {3E92CD18-E67E-42B0-ABEC-B429E8ED2D66}
+		{1E73AB59-DB81-4079-BE44-9DDE4C396080} = {3E92CD18-E67E-42B0-ABEC-B429E8ED2D66}
+		{3B40E17A-771C-42BA-BF9C-7A51419C6726} = {3E92CD18-E67E-42B0-ABEC-B429E8ED2D66}
+		{49F8C052-F3A5-4EB7-B834-79F9BE34FC85} = {3E92CD18-E67E-42B0-ABEC-B429E8ED2D66}
+		{FDB1D5B9-1923-4DEA-A92F-6DD4A84B01E9} = {3E92CD18-E67E-42B0-ABEC-B429E8ED2D66}
+		{769A135C-BD46-4983-BB8B-366857607FA2} = {3E92CD18-E67E-42B0-ABEC-B429E8ED2D66}
+		{8AF1A1D4-CD23-43BA-9344-D652957E1CC9} = {3E92CD18-E67E-42B0-ABEC-B429E8ED2D66}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1B1548C3-5BED-44AC-A80B-00E4B498C01C}

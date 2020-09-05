@@ -1,0 +1,25 @@
+﻿{
+  "IdentityData": {
+    "Roles": [
+      {
+        "Name": "Admin"
+      }
+    ],
+    "Users": [
+      {
+        "Username": "admin",
+        "Password": "123Mudar!",
+        "Email": "sergio.bianchi@al.infnet.edu.br",
+        "Roles": [
+          "Admin"
+        ],
+        "Claims": [
+          {
+            "Type": "name",
+            "Value": "admin"
+          }
+        ]
+      }
+    ]
+  }
+}

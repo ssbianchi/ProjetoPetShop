@@ -7,7 +7,8 @@ sergio
 senha: 
 123mudar!
 ConnectionString: 
-Server=tcp:petshop-animal-microservice-db-server-sergio.database.windows.net,1433;Initial Catalog=PetShop-Animal-Microservice-Db;Persist Security Info=False;User ID=sergio;Password=123mudar!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
+Server=tcp:petshop-cliente-microservice-db-server-sergio.database.windows.net,1433;Initial Catalog=PetShop-Cliente-Microservice-Db;Persist Security Info=False;User ID=sergio;Password=123mudar!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
+
 
 
 WebApp
@@ -29,10 +30,65 @@ sergio
 senha: 
 123mudar!
 ConnectionString:
-Server=tcp:petshop-cliente-microservice-db-server-sergio.database.windows.net,1433;Initial Catalog=PetShop-Cliente-Microservice-Db;Persist Security Info=False;User ID=sergio;Password=123mudar!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
+Server=tcp:petshop-animal-microservice-db-server-sergio.database.windows.net,1433;Initial Catalog=PetShop-Animal-Microservice-Db;Persist Security Info=False;User ID=sergio;Password=123mudar!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
 
 WebApp
 Name: 
 PetShop-AnimalMicroservice-Api-Sergio
 Windows Plan: 
 AnimalMicroserviceFreeHostingPlan
+
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+
+Identiy Server - IAM
+https://www.identityserver.com/home
+
+Skoruba - Interface para cadastrar informações no IAM
+https://github.com/skoruba/IdentityServer4.Admin
+
+Commando Criar Template no diretorio da solution: 
+dotnet new -i Skoruba.IdentityServer4.Admin.Templates::1.0.0-rc1-update2
+
+Comando Criar Projeto: (O --adminpassword deve contar Letra Maiuscula, Numero e Character especial)
+dotnet new skoruba.is4admin --name PetShop.IamMicroserver --title PetShopIAM --adminemail "sergio.bianchi@al.infnet.edu.br" --adminpassword "123Mudar!" --adminrole Admin --adminclientid AdminUI_ClientId --adminclientsecret AdminClientSecret --dockersupport true
+
+Database Name: 
+PetShop-Sergio-Db
+Server Name:
+petshop-sergio-db-server
+login: 
+sergio
+senha: 
+123mudar!
+ConnectionString:
+Server=tcp:petshop-sergio-db-server.database.windows.net,1433;Initial Catalog=PetShop-Sergio-Db;Persist Security Info=False;User ID=sergio;Password=123mudar!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
+
+--- Colocar para rodar no Edge
+
+Install 
+Postman
+redirect_uri: https://www.getpostman.com/oauth2/callback
+Criar Scope Postman
+
+WebApp
+PetShop-sergio-IamMicroservice-Admin
+PetShop-sergio-IamMicroservice-Identity
+PetShop-IamMicroservice-FreeHost
+
+
+--- Admin (9000 => 44390)
+"IdentityAdminRedirectUri": "http://localhost:9000/signin-oidc",
+"IdentityServerBaseUrl": "http://localhost:5000",
+
+--- Admin.API (5001 => 44359)
+"ApiBaseUrl": "http://localhost:5001",
+"IdentityServerBaseUrl": "http://localhost:5000",
+
+--- Entity (5000 => 44360)
+"IdentityAdminBaseUrl": "http://localhost:9000",
+
+
+
+
