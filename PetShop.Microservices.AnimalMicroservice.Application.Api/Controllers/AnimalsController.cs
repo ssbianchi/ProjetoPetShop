@@ -11,7 +11,7 @@ using PetShop.Microservices.AnimalMicroservice.Infra.DataAccess.Contexts;
 
 namespace PetShop.Microservices.AnimalMicroservice.Application.Api.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class AnimalsController : ControllerBase
