@@ -35,7 +35,7 @@ namespace PetShop.Microservices.AnimalMicroservice.Application.Api
             services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
                 .AddIdentityServerAuthentication(options => 
                 {
-                    options.Authority = "http://localhost:5000";
+                    options.Authority = "https://petshop-sergio-iammicroservice-identity.azurewebsites.net";
                     options.RequireHttpsMetadata = false;
                     options.ApiName = "AnimalMicroservice_ApiResource";
                 });

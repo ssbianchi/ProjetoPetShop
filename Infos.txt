@@ -79,15 +79,25 @@ PetShop-IamMicroservice-FreeHost
 
 
 --- Admin (9000 => 44390)
+https://petshop-sergio-iammicroservice-admin.azurewebsites.net
 "IdentityAdminRedirectUri": "http://localhost:9000/signin-oidc",
 "IdentityServerBaseUrl": "http://localhost:5000",
 
 --- Admin.API (5001 => 44359)
+https://petshop-sergio-iammicroservice-api.azurewebsites.net
 "ApiBaseUrl": "http://localhost:5001",
 "IdentityServerBaseUrl": "http://localhost:5000",
 
 --- Entity (5000 => 44360)
+https://petshop-sergio-iammicroservice-identity.azurewebsites.net
 "IdentityAdminBaseUrl": "http://localhost:9000",
+
+Id
+ClienteId
+Nome
+DataNascimento
+Peso
+Raca
 
 
 
