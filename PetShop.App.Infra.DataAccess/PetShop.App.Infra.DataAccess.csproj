@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PetShop.App.Domain\PetShop.App.Domain.csproj" />
+    <ProjectReference Include="..\PetShop.Microservices.AnimalMicroservice.Domain\PetShop.Microservices.AnimalMicroservice.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

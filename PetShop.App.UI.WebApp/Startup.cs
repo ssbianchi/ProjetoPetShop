@@ -2,6 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using PetShop.App.Application;
+using PetShop.Common.Domain.Services;
+using PetShop.Common.Infra.Helper.Serializers;
+using PetShop.Microservices.AnimalMicroservice.Infra.DataAccess.Contexts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -24,7 +28,18 @@ namespace PetShop.App.UI.WebApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<PetShop.Microservices.AnimalMicroservice.Infra.DataAccess.Contexts.AnimalContext>();
+            services.AddDbContext<AnimalContext>();
+
+            services.AddScoped<ISerializerService, SerializerService>();
+            services.AddScoped<IAppService, AppService>();
+
+            services.AddDistributedMemoryCache();
+            services.AddSession(options =>
+            {
+                options.Cookie.Name = "PetShop.Profile";
+                options.IdleTimeout = TimeSpan.FromSeconds(60000);
+                options.Cookie.IsEssential = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -43,10 +58,11 @@ namespace PetShop.App.UI.WebApp
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+            app.UseSession();
+            
             app.UseRouting();
-
             app.UseAuthorization();
-
+            
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(

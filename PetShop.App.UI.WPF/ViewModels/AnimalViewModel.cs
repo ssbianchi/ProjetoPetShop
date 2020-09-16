@@ -29,6 +29,7 @@ namespace PetShop.App.UI.WPF.ViewModels
                 RaiseAllCanExecuteChanged();
             }
         }
+        private string token;
         #endregion
         #region Construtctors
         public AnimalViewModel()
@@ -52,6 +53,7 @@ namespace PetShop.App.UI.WPF.ViewModels
             StatusMessage = "Status: Loading...";
 
             var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Add("Authorize", "bearer " + token);
             var result = await httpClient.GetAsync("https://petshop-animalmicroservice-api-sergio.azurewebsites.net/api/animals");
 
             if (!result.IsSuccessStatusCode)

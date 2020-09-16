@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.Text;
 
-namespace PetShop.App.UI.WebApp.Models
+namespace PetShop.App.Domain
 {
-    public class AnimalViewModel
+    public class Animal
     {
         public Guid Id { get; set; }
         public Guid ClienteId { get; set; }

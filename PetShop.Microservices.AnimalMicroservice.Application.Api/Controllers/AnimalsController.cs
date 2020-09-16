@@ -24,6 +24,7 @@ namespace PetShop.Microservices.AnimalMicroservice.Application.Api.Controllers
         }
 
         // GET: api/Animals
+        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Animal>>> GetAnimals()
         {

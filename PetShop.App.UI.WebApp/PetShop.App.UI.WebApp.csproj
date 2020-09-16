@@ -15,6 +15,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PetShop.App.Application\PetShop.App.Application.csproj" />
+    <ProjectReference Include="..\PetShop.Common.Infra.Helper\PetShop.Common.Infra.Helper.csproj" />
     <ProjectReference Include="..\PetShop.Microservices.AnimalMicroservice.Domain\PetShop.Microservices.AnimalMicroservice.Domain.csproj" />
     <ProjectReference Include="..\PetShop.Microservices.AnimalMicroservice.Infra.DataAccess\PetShop.Microservices.AnimalMicroservice.Infra.DataAccess.csproj" />
   </ItemGroup>

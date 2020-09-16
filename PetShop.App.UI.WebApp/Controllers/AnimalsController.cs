@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
+using PetShop.App.Application;
 using PetShop.Microservices.AnimalMicroservice.Domain.AggregatesModel.AnimalAggregate;
 using PetShop.Microservices.AnimalMicroservice.Infra.DataAccess.Contexts;
 
@@ -14,28 +16,39 @@ namespace PetShop.App.UI.WebApp.Controllers
 {
     public class AnimalsController : Controller
     {
+        private readonly IAppService appService;
         private readonly AnimalContext _context;
-
-        public AnimalsController(AnimalContext context)
+        
+        public AnimalsController(IAppService appService, AnimalContext context)
         {
             _context = context;
+            this.appService = appService;
         }
 
         // GET: All Animals
         public async Task<IActionResult> Index()
         {
-            var httpClient = new HttpClient();
-            var result = await httpClient.GetAsync("https://petshop-animalmicroservice-api-sergio.azurewebsites.net/api/animals");
-            
-            if (!result.IsSuccessStatusCode)
-                return BadRequest();
+            //var animals = await _context.Animals.ToListAsync();
+            //return View(animals);
 
-            var serializedAnimals = await result.Content.ReadAsStringAsync();
+            var token = HttpContext.Session.GetString("Token"); 
+            var animals = await appService.GetAllAnimalsAsync(token);
+            return View(animals);
 
-            var animalsViewModel = JsonConvert.DeserializeObject<IEnumerable<PetShop.App.UI.WebApp.Models.AnimalViewModel>>(serializedAnimals);
+            //var httpClient = new HttpClient();
+            //httpClient.DefaultRequestHeaders.Add("Authorize", "bearer aki");
+            ////PetShopWpf_ClientId
+            //var result = await httpClient.GetAsync("https://petshop-animalmicroservice-api-sergio.azurewebsites.net/api/animals");
 
-            //return View(await _context.Animals.ToListAsync());
-            return View(animalsViewModel);
+            //if (!result.IsSuccessStatusCode)
+            //    return BadRequest();
+
+            //var serializedAnimals = await result.Content.ReadAsStringAsync();
+
+            //var animalsViewModel = JsonConvert.DeserializeObject<IEnumerable<PetShop.App.UI.WebApp.Models.AnimalViewModel>>(serializedAnimals);
+
+            ////return View(await _context.Animals.ToListAsync());
+            //return View(animalsViewModel);
         }
 
         // GET: Animals/Details/5
