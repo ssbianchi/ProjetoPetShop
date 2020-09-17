@@ -6,6 +6,9 @@ using PetShop.App.Domain;
 using System.Collections.Generic;
 using System;
 using PetShop.App.Infra.DataAccess.Repositories;
+using PetShop.App.Application.Models.Dtos;
+using System.Text;
+using PetShop.App.Application.Models.ViewModels;
 
 namespace PetShop.App.Application
 {
@@ -64,36 +67,36 @@ namespace PetShop.App.Application
             throw new NotImplementedException();
         }
 
-        //public bool SignUp(SignUpViewModel signUpViewModel)
-        //{
-        //    var userPasswordDto = new UserPasswordDto
-        //    {
-        //        user = new UserPasswordDto.User
-        //        {
-        //            userName = signUpViewModel.Username,
-        //            email = signUpViewModel.Email,
-        //            emailConfirmed = true,
-        //            phoneNumber = signUpViewModel.Phone,
-        //            phoneNumberConfirmed = true
-        //        },
-        //        password = new UserPasswordDto.Password
-        //        {
-        //            password = signUpViewModel.Password,
-        //            confirmPassword = signUpViewModel.Password
-        //        }
-        //    };
+        public bool SignUp(SignUpViewModel signUpViewModel)
+        {
+            var userPasswordDto = new UserPasswordDto
+            {
+                user = new UserPasswordDto.User
+                {
+                    userName = signUpViewModel.Username,
+                    email = signUpViewModel.Email,
+                    emailConfirmed = true,
+                    phoneNumber = signUpViewModel.Phone,
+                    phoneNumberConfirmed = true
+                },
+                password = new UserPasswordDto.Password
+                {
+                    password = signUpViewModel.Password,
+                    confirmPassword = signUpViewModel.Password
+                }
+            };
 
-        //    var token = GetAdminToken();
-        //    var httpClient = new HttpClient();
-        //    httpClient.DefaultRequestHeaders.Add("Authorization", "bearer " + token);
-        //    var serializedUserPassword = serializeService.Serialize(userPasswordDto);
-        //    var httpContent = new StringContent(serializedUserPassword, Encoding.UTF8, "application/json");
-        //    var result = httpClient.PostAsync("https://amazinginsta-gustavo-iammicroservice-api.azurewebsites.net/api/UsersAndRoles", httpContent).Result;
+            var token = GetAdminToken();
+            var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Add("Authorization", "bearer " + token);
+            var serializedUserPassword = serializerService.Serialize(userPasswordDto);
+            var httpContent = new StringContent(serializedUserPassword, Encoding.UTF8, "application/json");
+            var result = httpClient.PostAsync("https://petshop-sergio-iammicroservice-api.azurewebsites.net/api/UsersAndRoles", httpContent).Result;
 
-        //    if (!result.IsSuccessStatusCode)
-        //        return false;
-        //    return true;
-        //}
+            if (!result.IsSuccessStatusCode)
+                return false;
+            return true;
+        }
 
         private string GetToken(string username, string password)
         {
@@ -120,7 +123,7 @@ namespace PetShop.App.Application
 
                 ClientId = "PetShopWpf_ClientId",
 
-                UserName = "admin",
+                UserName = "Admin",
                 Password = "123Mudar!"
             }).Result;
 

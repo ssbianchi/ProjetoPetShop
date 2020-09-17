@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using PetShop.App.Application;
+using PetShop.App.Domain;
 using PetShop.Microservices.AnimalMicroservice.Domain.AggregatesModel.AnimalAggregate;
 using PetShop.Microservices.AnimalMicroservice.Infra.DataAccess.Contexts;
 
@@ -80,13 +81,12 @@ namespace PetShop.App.UI.WebApp.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,ClienteId,Nome,Raca,DataNascimento,Peso")] Animal animal)
+        public async Task<IActionResult> Create([Bind("Id,ClienteId,Nome,Raca,DataNascimento,Peso")] App.Domain.Animal animal)
         {
             if (ModelState.IsValid)
             {
-                animal.Id = Guid.NewGuid();
-                _context.Add(animal);
-                await _context.SaveChangesAsync();
+                var token = HttpContext.Session.GetString("Token");
+                await appService.AddAnimalAsync(token, animal);
                 return RedirectToAction(nameof(Index));
             }
             return View(animal);
@@ -113,7 +113,7 @@ namespace PetShop.App.UI.WebApp.Controllers
         // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(Guid id, [Bind("Id,ClienteId,Nome,Raca,DataNascimento,Peso")] Animal animal)
+        public async Task<IActionResult> Edit(Guid id, [Bind("Id,ClienteId,Nome,Raca,DataNascimento,Peso")] App.Domain.Animal animal)
         {
             if (id != animal.Id)
             {

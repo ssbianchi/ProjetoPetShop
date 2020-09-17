@@ -11,7 +11,7 @@ using PetShop.Microservices.AnimalMicroservice.Infra.DataAccess.Contexts;
 
 namespace PetShop.Microservices.AnimalMicroservice.Application.Api.Controllers
 {
-    //[Authorize]
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class AnimalsController : ControllerBase
@@ -24,7 +24,7 @@ namespace PetShop.Microservices.AnimalMicroservice.Application.Api.Controllers
         }
 
         // GET: api/Animals
-        [Authorize]
+        //[Authorize]
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Animal>>> GetAnimals()
         {
@@ -83,6 +83,9 @@ namespace PetShop.Microservices.AnimalMicroservice.Application.Api.Controllers
         [HttpPost]
         public async Task<ActionResult<Animal>> PostAnimal(Animal animal)
         {
+            animal.ClienteId = Guid.Parse(User.FindFirst("sub")?.Value);
+            animal.Id = Guid.NewGuid();
+
             _context.Animals.Add(animal);
             await _context.SaveChangesAsync();
 

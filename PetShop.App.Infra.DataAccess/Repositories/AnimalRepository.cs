@@ -19,9 +19,15 @@ namespace PetShop.App.Infra.DataAccess.Repositories
             this.token = token;
         }
 
-        public Task CreateAsync(Animal entity)
+        public async Task CreateAsync(Animal entity)
         {
-            throw new NotImplementedException();
+            var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Add("Authorization", "bearer " + token);
+
+            var serializedAnimal = serializerService.Serialize(entity);
+            var httpContent = new StringContent(serializedAnimal, Encoding.UTF8, "application/json");
+
+            await httpClient.PostAsync("https://petshop-animalmicroservice-api-sergio.azurewebsites.net/api/animals", httpContent);
         }
 
         public Task DeleteAsync(Guid id)
@@ -69,9 +75,15 @@ namespace PetShop.App.Infra.DataAccess.Repositories
             throw new NotImplementedException();
         }
 
-        public void Update(Animal entity)
+        public async void Update(Animal entity)
         {
-            throw new NotImplementedException();
+            var httpClient = new HttpClient();
+            httpClient.DefaultRequestHeaders.Add("Authorization", "bearer " + token);
+
+            var serializedAnimal = serializerService.Serialize(entity);
+            var httpContent = new StringContent(serializedAnimal, Encoding.UTF8, "application/json");
+
+            await httpClient.PutAsync("https://petshop-animalmicroservice-api-sergio.azurewebsites.net/api/animals", httpContent);
         }
     }
 }

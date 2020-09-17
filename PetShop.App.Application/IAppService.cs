@@ -1,4 +1,5 @@
-﻿using PetShop.App.Application.Models.ViewModels;
+﻿using PetShop.App.Application.Models.Dtos;
+using PetShop.App.Application.Models.ViewModels;
 using PetShop.App.Domain;
 using System;
 using System.Collections;
@@ -10,7 +11,7 @@ namespace PetShop.App.Application
     public interface IAppService
     {
         string SignIn(string userName, string password);
-        bool SignUp();
+        bool SignUp(SignUpViewModel userPasswordDto);
 
         Task AddAnimalAsync(string token, Animal animalViewModel);
 
