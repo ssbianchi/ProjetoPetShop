@@ -101,27 +101,31 @@ PetShop-sergio-IamMicroservice-Identity
 PetShop-IamMicroservice-FreeHost
 
 
---- Admin (9000 => 44390)
+--- Admin (9000)
 https://petshop-sergio-iammicroservice-admin.azurewebsites.net
 "IdentityAdminRedirectUri": "http://localhost:9000/signin-oidc",
 "IdentityServerBaseUrl": "http://localhost:5000",
 
---- Admin.API (5001 => 44359)
+--- Admin.API (5001)
 https://petshop-sergio-iammicroservice-api.azurewebsites.net
 "ApiBaseUrl": "http://localhost:5001",
 "IdentityServerBaseUrl": "http://localhost:5000",
 
---- Entity (5000 => 44360)
+--- Entity (5000)
 https://petshop-sergio-iammicroservice-identity.azurewebsites.net
 "IdentityAdminBaseUrl": "http://localhost:9000",
 
-Id
-ClienteId
-Nome
-DataNascimento
-Peso
-Raca
+SERVICE BUS
+petshop-sergio-servicebus
+Nome da Queue
+process-adotar-command-queue
+adotar-processed-event-queue
+
+Shared Access Policies
+AdotarMicroserviceAccessKey
+Endpoint=sb://petshop-sergio-servicebus.servicebus.windows.net/;SharedAccessKeyName=AdotarMicroserviceAccessKey;SharedAccessKey=5oITr9RdsaZ4S/ukhn4AYn3sH9ouSEtib763BzKN4Qg=
+Endpoint=sb://petshop-sergio-servicebus.servicebus.windows.net/;SharedAccessKeyName=AdotarMicroserviceAccessKey;SharedAccessKey=BQLrT1EdmIaZ3aX64an8L6x682KYyYNH9bpYWbCOW/A=
 
 
-
-
+Link do video:
+https://drive.google.com/drive/folders/1z0pVvLkEL8eO-bBszUCzf0ZLPVoCifMt?usp=sharing

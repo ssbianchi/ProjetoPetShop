@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -37,6 +38,7 @@ namespace PetShop.Microservices.AdotarMicroservice.Application.Api
             //Injeção de dependencia. Pensar: Sempre que me pedirem uma interface, eu entrego a classe.
             services.AddControllers();
             services.AddDbContext<AdotarContext>();
+            services.AddScoped<DbContext, AdotarContext>();
             services.AddScoped<IAdotarRepository, AdotarRepository>();
             services.AddScoped<IAdotarService, AdotarService>();
             services.AddScoped<ISerializerService, SerializerService>();
