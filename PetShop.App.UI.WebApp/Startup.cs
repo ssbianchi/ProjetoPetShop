@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using PetShop.Microservices.AdotarMicroservice.Infra.DataAccess.Contexts;
 
 namespace PetShop.App.UI.WebApp
 {
@@ -29,6 +30,7 @@ namespace PetShop.App.UI.WebApp
         {
             services.AddControllersWithViews();
             services.AddDbContext<AnimalContext>();
+            services.AddDbContext<AdotarContext>();
 
             services.AddScoped<ISerializerService, SerializerService>();
             services.AddScoped<IAppService, AppService>();

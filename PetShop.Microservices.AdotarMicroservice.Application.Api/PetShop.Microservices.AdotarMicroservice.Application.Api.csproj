@@ -1,10 +1,11 @@
-﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.8">
@@ -15,12 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PetShop.App.Application\PetShop.App.Application.csproj" />
-    <ProjectReference Include="..\PetShop.Common.Infra.Helper\PetShop.Common.Infra.Helper.csproj" />
     <ProjectReference Include="..\PetShop.Microservices.AdotarMicroservice.Domain\PetShop.Microservices.AdotarMicroservice.Domain.csproj" />
     <ProjectReference Include="..\PetShop.Microservices.AdotarMicroservice.Infra.DataAccess\PetShop.Microservices.AdotarMicroservice.Infra.DataAccess.csproj" />
-    <ProjectReference Include="..\PetShop.Microservices.AnimalMicroservice.Domain\PetShop.Microservices.AnimalMicroservice.Domain.csproj" />
-    <ProjectReference Include="..\PetShop.Microservices.AnimalMicroservice.Infra.DataAccess\PetShop.Microservices.AnimalMicroservice.Infra.DataAccess.csproj" />
   </ItemGroup>
+
 
 </Project>

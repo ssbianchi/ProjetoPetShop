@@ -13,6 +13,7 @@ namespace PetShop.Microservices.AnimalMicroservice.Application.Api.Controllers
 {
     [Authorize]
     [Route("api/[controller]")]
+    [Produces("application/json")]
     [ApiController]
     public class AnimalsController : ControllerBase
     {

@@ -9,6 +9,7 @@ using PetShop.App.Infra.DataAccess.Repositories;
 using PetShop.App.Application.Models.Dtos;
 using System.Text;
 using PetShop.App.Application.Models.ViewModels;
+using PetShop.App.Domain.Adotar;
 
 namespace PetShop.App.Application
 {
@@ -22,6 +23,7 @@ namespace PetShop.App.Application
             this.serializerService = serializerService;
         }
 
+        #region Animal
         public async Task AddAnimalAsync(string token, Animal animalViewModel)
         {
             var animalRepository = new AnimalRepository(serializerService, token);
@@ -35,22 +37,23 @@ namespace PetShop.App.Application
             var animalService = new AnimalService(animalRepository);
             return await animalService.GetAllAnimalsAsync();
         }
+        #endregion
 
-        //public async Task AddAnimalAsync(Animal animalViewModel)
-        //{
-        //    var animalReporistory = new AnimalRepository(serializerService, token);
-        //    var animalService = new AnimalService(animalReporistory);
+        #region Adotar
+        public async Task AddAdotarAsync(string token, Adotar adotarViewModel)
+        {
+            var adotarRepository = new AdotarRepository(serializerService, token);
+            var adotarService = new AdotarService(adotarRepository);
+            await adotarService.AddAdotarAsync(adotarViewModel);
+        }
 
-        //    await animalService.AddAnimalAsync(animalViewModel);
-        //}
-
-        //public async Task<IEnumerable<Animal>> GetAllAnimalsAsync()
-        //{
-        //    var animalReporistory = new AnimalRepository(serializerService, token);
-        //    var animalService = new AnimalService(animalReporistory);
-
-        //    return await animalService.GetAllAnimalsAsync();
-        //}
+        public async Task<IEnumerable<Adotar>> GetAllAdotarsAsync(string token)
+        {
+            var adotarRepository = new AdotarRepository(serializerService, token);
+            var adotarService = new AdotarService(adotarRepository);
+            return await adotarService.GetAllAdotarsAsync();
+        }
+        #endregion
 
         public string SignIn(string username, string password)
         {

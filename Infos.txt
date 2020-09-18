@@ -42,6 +42,29 @@ AnimalMicroserviceFreeHostingPlan
 ---------------------------------------------------------------------
 ---------------------------------------------------------------------
 
+Database Name: 
+PetShop-Adotar-Microservice-Db
+Server Name: 
+petshop-adotar-microservice-db-server-sergio
+login: 
+sergio
+senha: 
+123mudar!
+ConnectionString: 
+Server=tcp:petshop-adotar-microservice-db-server-sergio.database.windows.net,1433;Initial Catalog=PetShop-Adotar-Microservice-Db;Persist Security Info=False;User ID=sergio;Password=123mudar!;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
+
+
+
+WebApp
+Name: 
+PetShop-AdotarMicroservice-Api-Sergio
+Windows Plan: 
+AdotarMicroserviceFreeHostingPlan
+
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+---------------------------------------------------------------------
+
 Identiy Server - IAM
 https://www.identityserver.com/home
 
