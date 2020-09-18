@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using PetShop.Microservices.AdotarMicroservice.Infra.DataAccess.Contexts;
 
 namespace PetShop.Microservices.AdotarMicroservice.Application.Api.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [Produces("application/json")]
     [ApiController]

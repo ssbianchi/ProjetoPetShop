@@ -92,6 +92,12 @@ namespace PetShop.App.UI.WebApp.Controllers
             return View(animal);
         }
 
+        public ActionResult Adotar()
+        {
+            return RedirectToAction("Index", "Adotars");
+        }
+        
+
         // GET: Animals/Edit/5
         public async Task<IActionResult> Edit(Guid? id)
         {
