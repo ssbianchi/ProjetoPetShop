@@ -12,7 +12,13 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using PetShop.Common.Application.Interfaces.CQRS.Messaging;
+using PetShop.Common.Domain.Services;
+using PetShop.Common.Infra.Helper.Serializers;
+using PetShop.Common.Infra.Messaging.Services;
+using PetShop.Microservices.AdotarMicroservice.Domain.AggregatesModel.AdotarAggregate;
 using PetShop.Microservices.AdotarMicroservice.Infra.DataAccess.Contexts;
+using PetShop.Microservices.AdotarMicroservice.Infra.DataAccess.Repositories;
 
 namespace PetShop.Microservices.AdotarMicroservice.Application.Api
 {
@@ -28,8 +34,15 @@ namespace PetShop.Microservices.AdotarMicroservice.Application.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Injeção de dependencia. Pensar: Sempre que me pedirem uma interface, eu entrego a classe.
             services.AddControllers();
             services.AddDbContext<AdotarContext>();
+            services.AddScoped<IAdotarRepository, AdotarRepository>();
+            services.AddScoped<IAdotarService, AdotarService>();
+            services.AddScoped<ISerializerService, SerializerService>();
+            services.AddScoped<IApiApplicationService, ApiApplicationService>();
+            services.AddScoped<IMediatorHandler, AzureServiceBusQueue>();
+
 
             services.AddAuthorization();
             services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)

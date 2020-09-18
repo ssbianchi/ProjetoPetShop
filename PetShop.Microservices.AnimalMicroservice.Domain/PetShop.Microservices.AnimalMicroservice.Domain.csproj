@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PetShop.Common.Domain\PetShop.Common.Domain.csproj" />
+    <ProjectReference Include="..\PetShop.Common.Infra.DataAccess\PetShop.Common.Infra.DataAccess.csproj" />
   </ItemGroup>
 
 </Project>

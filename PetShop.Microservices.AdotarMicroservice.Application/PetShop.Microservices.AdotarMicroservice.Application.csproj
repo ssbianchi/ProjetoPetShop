@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PetShop.Common.Application\PetShop.Common.Application.csproj" />
+    <ProjectReference Include="..\PetShop.Common.Infra.Helper\PetShop.Common.Infra.Helper.csproj" />
+    <ProjectReference Include="..\PetShop.Microservices.AdotarMicroservice.Domain\PetShop.Microservices.AdotarMicroservice.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="CQRS\Events\" />
+  </ItemGroup>
+
+</Project>

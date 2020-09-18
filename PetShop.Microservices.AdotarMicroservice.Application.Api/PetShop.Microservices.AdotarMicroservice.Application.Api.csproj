@@ -17,6 +17,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\PetShop.Common.Application\PetShop.Common.Application.csproj" />
+    <ProjectReference Include="..\PetShop.Common.Infra.Helper\PetShop.Common.Infra.Helper.csproj" />
+    <ProjectReference Include="..\PetShop.Common.Infra.Messaging\PetShop.Common.Infra.Messaging.csproj" />
+    <ProjectReference Include="..\PetShop.Microservices.AdotarMicroservice.Application\PetShop.Microservices.AdotarMicroservice.Application.csproj" />
     <ProjectReference Include="..\PetShop.Microservices.AdotarMicroservice.Domain\PetShop.Microservices.AdotarMicroservice.Domain.csproj" />
     <ProjectReference Include="..\PetShop.Microservices.AdotarMicroservice.Infra.DataAccess\PetShop.Microservices.AdotarMicroservice.Infra.DataAccess.csproj" />
   </ItemGroup>

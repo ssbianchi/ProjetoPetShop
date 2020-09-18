@@ -18,11 +18,14 @@ namespace PetShop.Microservices.AdotarMicroservice.Application.Api.Controllers
     public class AdotarsController : ControllerBase
     {
         private readonly AdotarContext _context;
+        private readonly IApiApplicationService apiApplicationService;
 
-        public AdotarsController(AdotarContext context)
+        public AdotarsController(AdotarContext context, IApiApplicationService apiApplicationService)
         {
             _context = context;
+            this.apiApplicationService = apiApplicationService;
         }
+
 
         // GET: api/Adotars
         [HttpGet]
@@ -83,11 +86,12 @@ namespace PetShop.Microservices.AdotarMicroservice.Application.Api.Controllers
         [HttpPost]
         public async Task<ActionResult<Adotar>> PostAdotar(Adotar adotar)
         {
-            //adotar.ClienteId = Guid.Parse(User.FindFirst("sub")?.Value);
-            adotar.Id = Guid.NewGuid();
+            //Utilizado antes de criar o CQRS
+            //adotar.Id = Guid.NewGuid();
+            //_context.Adocoes.Add(adotar);
+            //await _context.SaveChangesAsync();
 
-            _context.Adocoes.Add(adotar);
-            await _context.SaveChangesAsync();
+            await apiApplicationService.CreateAdotarAsync(adotar.ClienteId, adotar.AnimalId, adotar.DataAdocao);
 
             return CreatedAtAction("GetAdotar", new { id = adotar.Id }, adotar);
         }
